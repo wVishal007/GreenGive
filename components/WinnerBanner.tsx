@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
@@ -25,9 +25,9 @@ export default function WinnerBanner({
   }, []);
 
   const getMatchLabel = () => {
-    if (matchType === 5) return "5 Numbers Matched! 🎊";
-    if (matchType === 4) return "4 Numbers Matched! 🎉";
-    return "3 Numbers Matched! 🎈";
+    if (matchType === 5) return "5 Numbers Matched!";
+    if (matchType === 4) return "4 Numbers Matched!";
+    return "3 Numbers Matched!";
   };
 
   const getColor = () => {
@@ -74,8 +74,8 @@ export default function WinnerBanner({
             matchType === 5
               ? "text-amber-400"
               : matchType === 4
-                ? "text-emerald-400"
-                : "text-blue-400"
+              ? "text-emerald-400"
+              : "text-blue-400"
           }`}
         >
           ${amount.toFixed(2)}
@@ -93,7 +93,7 @@ export default function WinnerBanner({
           }}
           className="bg-white text-gray-900 font-bold px-6 py-3 rounded-xl"
         >
-          Awesome! 🎉
+          Awesome!
         </motion.button>
       </motion.div>
     </>

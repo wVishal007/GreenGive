@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
@@ -142,9 +142,9 @@ export default function AdminWinners() {
                   </td>
                   <td className="px-6 py-4">
                     <span
-                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${getMatchColor(w.matchType)}`}
+                      className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${getMatchColor(w.matchType)}`}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                      <span className="w-2 h-2 rounded-full bg-current" />
                       {w.matchType} Numbers
                     </span>
                   </td>
@@ -157,23 +157,23 @@ export default function AdminWinners() {
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2 mb-2">
                       <span
-                        className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${
+                        className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${
                           w.verified
                             ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                             : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
                         }`}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                        <span className="w-2 h-2 rounded-full bg-current" />
                         {w.verified ? "Verified" : "Pending"}
                       </span>
                       <span
-                        className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${
+                        className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${
                           w.payoutStatus === "paid"
                             ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                             : "bg-gray-500/10 text-gray-400 border border-gray-500/20"
                         }`}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                        <span className="w-2 h-2 rounded-full bg-current" />
                         {w.payoutStatus}
                       </span>
                     </div>

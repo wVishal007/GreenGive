@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
@@ -61,7 +61,7 @@ export default function HomePage() {
           </Link>
           <Link href="/signup" className="relative group">
             <div className="absolute inset-0 bg-emerald-500 blur-2xl opacity-25 rounded-xl group-hover:opacity-40 transition-opacity" />
-            <span className="relative bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold px-6 py-2.5 rounded-xl transition-all hover:scale-105 block">
+            <span className="relative bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold px-6 py-2 rounded-xl transition-all hover:scale-105 block">
               Sign Up Free
             </span>
           </Link>
@@ -103,7 +103,7 @@ export default function HomePage() {
           className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
         >
           Turn your golf game into real rewards and charitable impact. Every
-          round brings you closer to winning—and helping others.
+          round brings you closer to winningâ€”and helping others.
         </motion.p>
 
         {/* CTAs */}
@@ -116,7 +116,7 @@ export default function HomePage() {
           <Link href="/signup" className="relative group">
             <div className="absolute inset-0 bg-emerald-500 blur-2xl opacity-25 rounded-xl group-hover:opacity-40 transition-opacity" />
             <span className="relative bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-400 hover:to-emerald-300 text-gray-900 font-bold px-8 py-4 rounded-xl text-lg block transition-all hover:scale-105 shadow-2xl shadow-emerald-500/25">
-              Start Winning Now →
+              Start Winning Now â†’
             </span>
           </Link>
           <Link
@@ -174,19 +174,19 @@ export default function HomePage() {
               step: "01",
               title: "Track Scores",
               desc: "Enter your last 5 Stableford scores. Simple, fast, rewarding.",
-              icon: "📊",
+              icon: "ðŸ“Š",
             },
             {
               step: "02",
               title: "Choose Charity",
               desc: "Pick a cause you care about. Your subscription helps them.",
-              icon: "❤️",
+              icon: "â¤ï¸",
             },
             {
               step: "03",
               title: "Win Prizes",
               desc: "Monthly draws with prize pools from all subscribers.",
-              icon: "🏆",
+              icon: "ðŸ†",
             },
           ].map((item, i) => (
             <motion.div
@@ -271,17 +271,17 @@ export default function HomePage() {
             {
               name: "Red Cross",
               desc: "Providing humanitarian aid worldwide",
-              icon: "❤️",
+              icon: "â¤ï¸",
             },
             {
               name: "Ocean Cleanup",
               desc: "Cleaning plastic from oceans",
-              icon: "🌊",
+              icon: "ðŸŒŠ",
             },
             {
               name: "Education First",
               desc: "Supporting global education access",
-              icon: "📚",
+              icon: "ðŸ“š",
             },
           ].map((charity, i) => (
             <motion.div
@@ -307,7 +307,7 @@ export default function HomePage() {
           className="text-center mt-12"
         >
           <Link href="/charities" className="btn-secondary inline-block">
-            View All Charities →
+            View All Charities â†’
           </Link>
         </motion.div>
       </section>
@@ -330,7 +330,7 @@ export default function HomePage() {
           <Link href="/signup" className="relative group inline-block">
             <div className="absolute inset-0 bg-emerald-500 blur-2xl opacity-25 rounded-xl group-hover:opacity-40 transition-opacity" />
             <span className="relative bg-gradient-to-r from-emerald-500 to-emerald-400 text-gray-900 font-bold px-8 py-4 rounded-xl text-lg block transition-all hover:scale-105">
-              Join Digital Heroes →
+              Join Digital Heroes â†’
             </span>
           </Link>
         </motion.div>

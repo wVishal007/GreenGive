@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -66,13 +66,13 @@ export default function DrawsPage() {
                       {getMonthName(draw.month)} {draw.year}
                     </h3>
                     <span
-                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium mt-2 ${
+                      className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium mt-2 ${
                         draw.status === "published"
                           ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                           : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
                       }`}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                      <span className="w-2 h-2 rounded-full bg-current" />
                       {draw.status}
                     </span>
                   </div>

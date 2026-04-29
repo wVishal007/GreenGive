@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
@@ -86,25 +86,25 @@ export default function AdminUsers() {
                   <td className="px-6 py-4 text-gray-400">{u.email}</td>
                   <td className="px-6 py-4">
                     <span
-                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${
+                      className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${
                         u.role === "admin"
                           ? "bg-purple-500/10 text-purple-400 border border-purple-500/20"
                           : "bg-blue-500/10 text-blue-400 border border-blue-500/20"
                       }`}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                      <span className="w-2 h-2 rounded-full bg-current" />
                       {u.role}
                     </span>
                   </td>
                   <td className="px-6 py-4">
                     <span
-                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${
+                      className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${
                         u.subscriptionStatus === "active"
                           ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                           : "bg-rose-500/10 text-rose-400 border border-rose-500/20"
                       }`}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                      <span className="w-2 h-2 rounded-full bg-current" />
                       {u.subscriptionStatus}
                     </span>
                   </td>
