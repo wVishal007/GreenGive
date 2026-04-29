@@ -1,10 +1,11 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
+import Link from "next/link";
 
 interface Winner {
   _id: string;
@@ -38,7 +39,7 @@ export default function AdminWinners() {
   }, []);
 
   const handleVerify = async (id: string) => {
-    const res = await fetch(`/api/admin/winners/${id}/verify`, {
+    const res = await fetch("/api/admin/winners/" + id + "/verify", {
       method: "PUT",
     });
     if (res.ok) {
@@ -51,7 +52,7 @@ export default function AdminWinners() {
     const transactionId = prompt("Enter transaction ID:");
     if (!transactionId) return;
 
-    const res = await fetch(`/api/admin/winners/${id}/payout`, {
+    const res = await fetch("/api/admin/winners/" + id + "/payout", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ transactionId }),

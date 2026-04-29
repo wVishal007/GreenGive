@@ -33,7 +33,7 @@ export default function AdminDashboard() {
       .then((data) => setAnalytics(data));
   }, []);
 
-  if (status === "loading")
+  if (status === "loading") {
     return (
       <div className="min-h-screen bg-[#030712] flex items-center justify-center">
         <div className="animate-pulse text-emerald-400 text-xl">
@@ -41,6 +41,7 @@ export default function AdminDashboard() {
         </div>
       </div>
     );
+  }
 
   const statCards = [
     {

@@ -4,6 +4,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function AdminLayout({
   children,
@@ -15,57 +16,66 @@ export default function AdminLayout({
 
   useEffect(() => {
     if (status === "unauthenticated") router.push("/login");
-    if (status === "authenticated" && session?.user?.role !== "admin")
+    if (status === "authenticated" && session?.user?.role !== "admin") {
       router.push("/dashboard");
+    }
   }, [status, session, router]);
 
-  if (status === "loading") return <div>Loading...</div>;
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen bg-[#030712] flex items-center justify-center">
+        <div className="text-emerald-400 text-xl">Loading...</div>
+      </div>
+    );
+  }
+
+  const navLinks = [
+    { href: "/admin-home", label: "Dashboard" },
+    { href: "/admin/users", label: "Users" },
+    { href: "/admin/winners", label: "Winners" },
+    { href: "/admin/analytics", label: "Analytics" },
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div className="min-h-screen bg-[#030712] relative">
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-950/20 via-transparent to-blue-950/20" />
+
+      <nav className="relative z-10 bg-gray-900/80 backdrop-blur-xl border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link
-            href="/admin/admin-home"
-            className="text-xl font-bold text-purple-600"
+            href="/admin-home"
+            className="text-xl font-bold text-white flex items-center gap-2"
           >
-            Digital Heroes Admin
+            <span className="text-purple-400">Digital</span> Heroes Admin
           </Link>
+
           <div className="flex items-center gap-6">
-            <Link
-              href="/admin/users"
-              className="text-gray-600 hover:text-purple-600"
-            >
-              Users
-            </Link>
-            <Link
-              href="/admin/draws"
-              className="text-gray-600 hover:text-purple-600"
-            >
-              Draws
-            </Link>
-            <Link
-              href="/admin/charities"
-              className="text-gray-600 hover:text-purple-600"
-            >
-              Charities
-            </Link>
-            <Link
-              href="/admin/winners"
-              className="text-gray-600 hover:text-purple-600"
-            >
-              Winners
-            </Link>
-            <button
-              onClick={() => signOut({ callbackUrl: "/login" })}
-              className="text-red-600 hover:text-red-800"
-            >
-              Logout
-            </button>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-gray-300 hover:text-purple-400 transition-colors text-sm font-medium"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <div className="flex items-center gap-4 pl-6 border-l border-gray-700">
+              <span className="text-gray-400 text-sm">
+                {session?.user?.name}
+              </span>
+              <button
+                onClick={() => signOut({ callbackUrl: "/login" })}
+                className="text-red-400 hover:text-red-300 text-sm font-medium transition-colors"
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </nav>
-      <main>{children}</main>
+
+      <main className="relative z-10">{children}</main>
     </div>
   );
 }
